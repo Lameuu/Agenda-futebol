@@ -13,6 +13,7 @@
             gapi.load('auth2', function() {
                 auth2 = gapi.auth2.init({
                     client_id: 'YOUR_GOOGLE_CLIENT_ID', // Substitua pelo seu Client ID
+                    scope: 'profile email'
                 });
             });
         }
