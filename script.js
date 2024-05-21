@@ -1,12 +1,12 @@
 // Validação de formulário de cadastro local
 function validateCadastroForm() {
-    const nome = document.getElementById('nome-cadastro').value;
-    const sobrenome = document.getElementById('sobrenome-cadastro').value;
-    const cpf = document.getElementById('cpf-cadastro').value;
-    const email = document.getElementById('email-cadastro').value;
-    const telefone = document.getElementById('telefone-cadastro').value;
-    const senha = document.getElementById('senha-cadastro').value;
-    const senhaRepetida = document.getElementById('senha-repetida-cadastro').value;
+    const nome = document.getElementById('nome-cadastro').value.trim();
+    const sobrenome = document.getElementById('sobrenome-cadastro').value.trim();
+    const cpf = document.getElementById('cpf-cadastro').value.trim();
+    const email = document.getElementById('email-cadastro').value.trim();
+    const telefone = document.getElementById('telefone-cadastro').value.trim();
+    const senha = document.getElementById('senha-cadastro').value.trim();
+    const senhaRepetida = document.getElementById('senha-repetida-cadastro').value.trim();
 
     // Verifica se todos os campos foram preenchidos
     if (!nome || !sobrenome || !cpf || !email || !telefone || !senha || !senhaRepetida) {
@@ -56,14 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const cadastrarGoogleBtn = document.getElementById('btn-google-cadastro');
     if (cadastrarGoogleBtn) {
         cadastrarGoogleBtn.addEventListener('click', function () {
-            // Chama a função de login do Google
-            auth2.signIn().then(function(googleUser) {
+            auth2.signIn().then(function (googleUser) {
                 console.log('Usuário autenticado com sucesso:', googleUser);
-                // Após o login com sucesso, salva o status no Local Storage
                 localStorage.setItem('googleUser', 'true');
-                // Redireciona para a página de quadras após o login com sucesso
                 navigateTo('quadras');
-            }, function(error) {
+            }, function (error) {
                 console.error('Erro ao autenticar usuário:', error);
             });
         });
@@ -77,6 +74,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Verifica o status do login do Google ao carregar a página
     checkGoogleLoginStatus();
 });
+
+// Função para verificar o status do login do Google
+function checkGoogleLoginStatus() {
+    const googleUser = localStorage.getItem('googleUser');
+    if (googleUser) {
+        console.log('Usuário está autenticado com o Google.');
+    } else {
+        console.log('Usuário não está autenticado com o Google.');
+    }
+}
+
+// Função para salvar as informações de cadastro localmente
+function saveCadastroInfo(nome, sobrenome, cpf, email, telefone, senha) {
+    const user = {
+        nome: nome,
+        sobrenome: sobrenome,
+        cpf: cpf,
+        email: email,
+        telefone: telefone,
+        senha: senha
+    };
+    localStorage.setItem('cadastroUsuario', JSON.stringify(user));
+    console.log('Informações de cadastro salvas:', user);
+}
+
+// Função para redirecionar para uma página
+function navigateTo(page) {
+    console.log('Redirecionando para a página:', page);
+    window.location.href = `${page}.html`; // Redireciona para a página especificada
+}
