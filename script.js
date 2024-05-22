@@ -1,4 +1,3 @@
-// Validação de formulário de cadastro local
 function validateCadastroForm() {
     const nome = document.getElementById('nome-cadastro').value.trim();
     const sobrenome = document.getElementById('sobrenome-cadastro').value.trim();
@@ -11,6 +10,36 @@ function validateCadastroForm() {
     // Verifica se todos os campos foram preenchidos
     if (!nome || !sobrenome || !cpf || !email || !telefone || !senha || !senhaRepetida) {
         alert('Por favor, preencha todos os campos.');
+        return false;
+    }
+
+    // Verifica se o nome contém apenas letras e espaços
+    if (!/^[a-zA-Z\s]+$/.test(nome)) {
+        alert('O campo nome só pode conter letras e espaços.');
+        return false;
+    }
+
+    // Verifica se o sobrenome contém apenas letras e espaços
+    if (!/^[a-zA-Z\s]+$/.test(sobrenome)) {
+        alert('O campo sobrenome só pode conter letras e espaços.');
+        return false;
+    }
+
+    // Verifica se o CPF possui 11 dígitos
+    if (cpf.length !== 11 || !/^\d+$/.test(cpf)) {
+        alert('CPF inválido. Certifique-se de que contém 11 dígitos numéricos.');
+        return false;
+    }
+
+    // Verifica se o email possui um formato válido
+    if (!/\S+@\S+\.\S+/.test(email)) {
+        alert('Email inválido.');
+        return false;
+    }
+
+    // Verifica se o telefone possui apenas números e tem entre 10 e 11 dígitos
+    if (!/^\d{10,11}$/.test(telefone)) {
+        alert('Telefone inválido. Certifique-se de que contém apenas números e tem entre 10 e 11 dígitos.');
         return false;
     }
 
@@ -30,79 +59,4 @@ function validateCadastroForm() {
     navigateTo('quadras');
 
     return true;
-}
-
-// Função para exibir popup de cadastro realizado com sucesso
-function showCadastroPopup() {
-    alert('Cadastro realizado com sucesso!');
-}
-
-// Adiciona eventos de clique aos botões
-document.addEventListener('DOMContentLoaded', function () {
-    const verQuadrasBtn = document.getElementById('ver-quadras-btn');
-    if (verQuadrasBtn) {
-        verQuadrasBtn.addEventListener('click', function () {
-            navigateTo('quadras');
-        });
-    }
-
-    const cadastrarBtn = document.getElementById('cadastrar-btn');
-    if (cadastrarBtn) {
-        cadastrarBtn.addEventListener('click', function () {
-            validateCadastroForm();
-        });
-    }
-
-    const cadastrarGoogleBtn = document.getElementById('btn-google-cadastro');
-    if (cadastrarGoogleBtn) {
-        cadastrarGoogleBtn.addEventListener('click', function () {
-            auth2.signIn().then(function (googleUser) {
-                console.log('Usuário autenticado com sucesso:', googleUser);
-                localStorage.setItem('googleUser', 'true');
-                navigateTo('quadras');
-            }, function (error) {
-                console.error('Erro ao autenticar usuário:', error);
-            });
-        });
-    }
-
-    const submitCadastroForm = document.getElementById('form-cadastro');
-    if (submitCadastroForm) {
-        submitCadastroForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita o envio do formulário
-            validateCadastroForm();
-        });
-    }
-
-    checkGoogleLoginStatus();
-});
-
-// Função para verificar o status do login do Google
-function checkGoogleLoginStatus() {
-    const googleUser = localStorage.getItem('googleUser');
-    if (googleUser) {
-        console.log('Usuário está autenticado com o Google.');
-    } else {
-        console.log('Usuário não está autenticado com o Google.');
-    }
-}
-
-// Função para salvar as informações de cadastro localmente
-function saveCadastroInfo(nome, sobrenome, cpf, email, telefone, senha) {
-    const user = {
-        nome: nome,
-        sobrenome: sobrenome,
-        cpf: cpf,
-        email: email,
-        telefone: telefone,
-        senha: senha
-    };
-    localStorage.setItem('cadastroUsuario', JSON.stringify(user));
-    console.log('Informações de cadastro salvas:', user);
-}
-
-// Função para redirecionar para uma página
-function navigateTo(page) {
-    console.log('Redirecionando para a página:', page);
-    window.location.href = `${page}.html`; // Redireciona para a página especificada
 }
