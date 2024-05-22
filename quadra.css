@@ -55,13 +55,31 @@ main {
 }
 
 #quadras {
+    
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#quadras2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;    
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 #quadras h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#quadras2 h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -107,4 +125,11 @@ footer {
     footer {
         padding: 10px 0;
     }
+}
+
+.quadDispo{
+
+    display: flex;
+    justify-content: center;
+
 }
