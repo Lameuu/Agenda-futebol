@@ -10,6 +10,9 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
+    background-image: url('/Imagens/timothy-tan-PAe2UhGo-S4-unsplash.jpg'); /* Imagem de fundo para a página */
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .container {
@@ -63,13 +66,37 @@ main {
 .box {
     width: 45%;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* Leve transparência para destacar o texto */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    position: relative;
+    background-image: url('/Imagens/capa-guararema-960x675.jpg'); /* Imagem de fundo para as boxes */
+    background-size: cover;
+    background-position: center;
+}
+
+.box2 {
+    width: 45%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Leve transparência para destacar o texto */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    background-image: url('/Imagens/11442806-estadio-de-futebol-3d-com-modelo-de-vista-frontal-de-gol-de-futebol-para-seu-projeto-vetor.jpg'); /* Imagem de fundo para as boxes */
+    background-size: cover;
+    background-position: center;
 }
 
 .box h2 {
+    
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.box2 h2 {
+    color: #f0f0f0;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -96,4 +123,5 @@ main {
 #imagens h2 {
     font-size: 24px;
     margin-bottom: 20px;
+    color: white;
 }
