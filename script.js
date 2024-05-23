@@ -1,62 +1,83 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurar a data mínima para o input de data de reserva
+    const dataInput = document.getElementById('data-reserva');
+    const today = new Date().toISOString().split('T')[0];
+    dataInput.setAttribute('min', today);
+});
+
+function openReservaPopup(quadraNome) {
+    document.getElementById('quadra-nome').textContent = quadraNome;
+    document.getElementById('reserva-popup').style.display = 'flex';
+    populateAvailableTimes();
+}
+
+function closeReservaPopup() {
+    document.getElementById('reserva-popup').style.display = 'none';
+}
+
+function populateAvailableTimes() {
+    const timeSelect = document.getElementById('hora-reserva');
+    timeSelect.innerHTML = '';
+    const times = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
+    times.forEach(time => {
+        const option = document.createElement('option');
+        option.value = time;
+        option.textContent = time;
+        timeSelect.appendChild(option);
+    });
+}
+
+function reservar() {
+    const data = document.getElementById('data-reserva').value;
+    const hora = document.getElementById('hora-reserva').value;
+    const quadra = document.getElementById('quadra-nome').textContent;
+    
+    if (!data || !hora) {
+        alert('Por favor, selecione uma data e horário válidos.');
+        return;
+    }
+    
+    alert(`Quadra ${quadra} reservada para ${data} às ${hora}.`);
+    closeReservaPopup();
+}
+
 function validateCadastroForm() {
-    const nome = document.getElementById('nome-cadastro').value.trim();
-    const sobrenome = document.getElementById('sobrenome-cadastro').value.trim();
-    const cpf = document.getElementById('cpf-cadastro').value.trim();
-    const email = document.getElementById('email-cadastro').value.trim();
-    const telefone = document.getElementById('telefone-cadastro').value.trim();
-    const senha = document.getElementById('senha-cadastro').value.trim();
-    const senhaRepetida = document.getElementById('senha-repetida-cadastro').value.trim();
-
-    // Verifica se todos os campos foram preenchidos
+    const nome = document.getElementById('nome-cadastro').value;
+    const sobrenome = document.getElementById('sobrenome-cadastro').value;
+    const cpf = document.getElementById('cpf-cadastro').value;
+    const email = document.getElementById('email-cadastro').value;
+    const telefone = document.getElementById('telefone-cadastro').value;
+    const senha = document.getElementById('senha-cadastro').value;
+    const senhaRepetida = document.getElementById('senha-repetida-cadastro').value;
+    
     if (!nome || !sobrenome || !cpf || !email || !telefone || !senha || !senhaRepetida) {
-        alert('Por favor, preencha todos os campos.');
+        alert('Todos os campos são obrigatórios.');
         return false;
     }
-
-    // Verifica se o nome contém apenas letras e espaços
-    if (!/^[a-zA-Z\s]+$/.test(nome)) {
-        alert('O campo nome só pode conter letras e espaços.');
-        return false;
-    }
-
-    // Verifica se o sobrenome contém apenas letras e espaços
-    if (!/^[a-zA-Z\s]+$/.test(sobrenome)) {
-        alert('O campo sobrenome só pode conter letras e espaços.');
-        return false;
-    }
-
-    // Verifica se o CPF possui 11 dígitos
-    if (cpf.length !== 11 || !/^\d+$/.test(cpf)) {
-        alert('CPF inválido. Certifique-se de que contém 11 dígitos numéricos.');
-        return false;
-    }
-
-    // Verifica se o email possui um formato válido
-    if (!/\S+@\S+\.\S+/.test(email)) {
-        alert('Email inválido.');
-        return false;
-    }
-
-    // Verifica se o telefone possui apenas números e tem entre 10 e 11 dígitos
-    if (!/^\d{10,11}$/.test(telefone)) {
-        alert('Telefone inválido. Certifique-se de que contém apenas números e tem entre 10 e 11 dígitos.');
-        return false;
-    }
-
-    // Verifica se as senhas coincidem
+    
     if (senha !== senhaRepetida) {
         alert('As senhas não coincidem.');
         return false;
     }
-
-    // Salva as informações de cadastro localmente
-    saveCadastroInfo(nome, sobrenome, cpf, email, telefone, senha);
-
-    // Exibe o popup de cadastro realizado com sucesso
-    showCadastroPopup();
-
-    // Redireciona para a página de quadras após o cadastro com sucesso
-    navigateTo('quadras');
-
+    
+    alert('Cadastro realizado com sucesso!');
     return true;
+}
+
+function navigateTo(page) {
+    window.location.href = page;
+}
+
+function signInWithGoogle() {
+    auth2.grantOfflineAccess().then(signInCallback);
+}
+
+function signInCallback(authResult) {
+    if (authResult['code']) {
+        // Enviar o código do authResult para o servidor
+        console.log('Código de autenticação do Google:', authResult['code']);
+        alert('Cadastro realizado com Google!');
+    } else {
+        alert('Falha na autenticação com Google.');
+    }
 }

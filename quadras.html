@@ -22,44 +22,63 @@
     <main>
         <section id="quadras">
             <h2>Quadras Disponíveis</h2>
-            <!-- Aqui serão listadas as quadras disponíveis -->
         </section>
-
-         <!-- Aqui serão listadas as quadras disponíveis -->
-         <section id="quadras2">
-         <Div>
-            <h2>Gaiolaao</h2>
-        </Div>
-
-        <Div>
-            <h2>Gaiolaao</h2>
-        </Div>
-
-        <Div>
-            <h2>Gaiolaao</h2>
-        </Div>
-
-        <Div>
-            <h2>Gaiolaao</h2>
-        </Div>
-
-        <Div>
-            <h2>Gaiolaao</h2>
-        </Div>
-
-        <Div>
-            <h2>Gaiolaao</h2>
-        </Div>
-
-        <Div>
-            <h2>Gaiolaao</h2>
-        </Div>
-    </section>
-
+        <section id="quadras2">
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <!-- Adicione mais boxes conforme necessário -->
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+            <div class="quadra-box">
+                <h3>Gaiolão</h3>
+                <button class="reserva-btn" onclick="openReservaPopup('Gaiolão')">Reservar</button>
+            </div>
+        </section>
     </main>
     <footer>
         <!-- Informações de contato e rodapé -->
     </footer>
+    <div id="reserva-popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeReservaPopup()">&times;</span>
+            <h2>Reservar Quadra - <span id="quadra-nome"></span></h2>
+            <label for="data-reserva">Data:</label>
+            <input type="date" id="data-reserva" min="">
+            <label for="hora-reserva">Horários Disponíveis:</label>
+            <select id="hora-reserva" multiple>
+                <!-- Opções de horário serão preenchidas pelo JS -->
+            </select>
+            <button onclick="reservar()">Reservar</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

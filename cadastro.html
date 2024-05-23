@@ -31,7 +31,7 @@
         </nav>
     </header>
     <main>
-        <form id="form-cadastro">
+        <form id="form-cadastro" onsubmit="return validateCadastroForm()">
             <input type="text" id="nome-cadastro" placeholder="Nome" required>
             <input type="text" id="sobrenome-cadastro" placeholder="Sobrenome" required>
             <input type="text" id="cpf-cadastro" placeholder="CPF" required>
@@ -40,9 +40,9 @@
             <input type="password" id="senha-cadastro" placeholder="Senha" required>
             <input type="password" id="senha-repetida-cadastro" placeholder="Repita a Senha" required>
             <button type="submit" id="cadastrar-btn">Cadastrar</button>
-            <button type="button" id="btn-google-cadastro">Cadastrar com Google</button>
+            <button type="button" id="btn-google-cadastro" onclick="signInWithGoogle()">Cadastrar com Google</button>
         </form>
-        <button id="ver-quadras-btn">Ver Quadras</button>
+        <button id="ver-quadras-btn" onclick="navigateTo('quadras.html')">Ver Quadras</button>
     </main>
     <script src="script.js"></script>
 </body>
