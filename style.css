@@ -52,113 +52,56 @@ nav ul li a {
     text-decoration: none;
     color: #fff;
     font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
 
-/* Main */
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Seções principais */
 main {
-    padding: 20px;
+    padding: 40px 0;
 }
 
+/* Estilos das caixas principais */
 #boxes {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .box, .box2 {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 45%;
-}
-
-.box h2, .box2 h2 {
-    margin-bottom: 20px;
+    flex: 1;
+    margin: 10px;
 }
 
 .button {
     display: inline-block;
     padding: 10px 20px;
-    color: #fff;
     background-color: #333;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
+.button:hover {
+    background-color: #555;
+}
+
+/* Estilos da seção de imagens */
 #imagens {
     text-align: center;
-    margin-top: 20px;
 }
 
 #imagens h2 {
     margin-bottom: 20px;
-}
-
-#quadras, #quadras2 {
-    margin-top: 20px;
-}
-
-.quadra-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.quadra-box h3 {
-    margin-bottom: 10px;
-}
-
-.reserva-btn {
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 80%;
-    max-width: 500px;
-}
-
-.popup-content label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.popup-content input, .popup-content select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.popup-content button {
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #333;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 /* Rodapé */
@@ -166,12 +109,24 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
+    padding: 10px 0;
+    position: absolute;
     width: 100%;
     bottom: 0;
 }
 
-footer p {
-    margin: 0;
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #boxes {
+        flex-direction: column;
+    }
+
+    .box, .box2 {
+        margin: 10px 0;
+    }
 }
