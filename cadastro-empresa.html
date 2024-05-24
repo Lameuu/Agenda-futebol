@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cadastroEmpresa.css">
+    <title>Cadastro de Empresas</title>
+</head>
+<body>
+    <!-- Login Section -->
+<div class="login-container">
+    <form id="login-form">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+    <header>
+        <!-- Inclua aqui o header existente -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="quadras.html">Quadras</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="registration-container">
+            <h1>Cadastro de Empresas</h1>
+            <form id="empresa-form">
+                <label for="empresa-nome">Nome da Empresa:</label>
+                <input type="text" id="empresa-nome" name="empresa-nome" required>
+                
+                <label for="empresa-endereco">Endereço:</label>
+                <input type="text" id="empresa-endereco" name="empresa-endereco" required>
+                
+                <label for="empresa-telefone">Telefone:</label>
+                <input type="text" id="empresa-telefone" name="empresa-telefone" required>
+                
+                <label for="empresa-email">Email:</label>
+                <input type="email" id="empresa-email" name="empresa-email" required>
+                
+                <label for="empresa-quadras">Quantidade de Quadras:</label>
+                <input type="number" id="empresa-quadras" name="empresa-quadras" required>
+                
+                <label for="empresa-valor">Valor dos Aluguéis:</label>
+                <input type="text" id="empresa-valor" name="empresa-valor" required>
+                
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Inclua aqui o footer existente -->
+    </footer>
+</body>
+</html>

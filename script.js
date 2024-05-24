@@ -12,6 +12,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicializar autenticação do Google após o carregamento da página
     onLoad();
+
+    // Adicionar evento de submissão ao formulário de login
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            login();
+        });
+    }
+
+    // Adicionar evento de submissão ao formulário de cadastro de empresa
+    const empresaForm = document.getElementById('empresa-form');
+    if (empresaForm) {
+        empresaForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            cadastrarEmpresa();
+        });
+    }
 });
 
 // Objeto para armazenar as reservas
@@ -125,15 +143,36 @@ function onLoad() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const dataInput = document.getElementById('data-reserva');
-    const today = new Date().toISOString().split('T')[0];
-    dataInput.setAttribute('min', today);
+// Função para realizar login
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-    // Fechar o popup ao pressionar "Esc"
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeReservaPopup();
-        }
-    });
-});
+    if (!username || !password) {
+        alert('Por favor, preencha todos os campos de login.');
+        return;
+    }
+
+    // Simulação de autenticação
+    alert(`Usuário ${username} logado com sucesso!`);
+    // Aqui você pode adicionar a lógica de autenticação real
+}
+
+// Função para cadastrar empresa
+function cadastrarEmpresa() {
+    const nomeEmpresa = document.getElementById('empresa-nome').value;
+    const endereco = document.getElementById('empresa-endereco').value;
+    const telefone = document.getElementById('empresa-telefone').value;
+    const email = document.getElementById('empresa-email').value;
+    const quantidadeQuadras = document.getElementById('empresa-quadras').value;
+    const valorAluguel = document.getElementById('empresa-valor').value;
+
+    if (!nomeEmpresa || !endereco || !telefone || !email || !quantidadeQuadras || !valorAluguel) {
+        alert('Todos os campos são obrigatórios.');
+        return;
+    }
+
+    // Simulação de cadastro
+    alert(`Empresa ${nomeEmpresa} cadastrada com sucesso!`);
+    // Aqui você pode adicionar a lógica de cadastro real
+}
