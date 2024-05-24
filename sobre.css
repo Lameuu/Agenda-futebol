@@ -8,7 +8,7 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -36,12 +36,20 @@ main {
     margin-bottom: 20px;
 }
 
+/* Adicionar a classe container para flexbox */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Espaçamento entre as caixas */
+}
+
 .box {
+    flex: 1 1 30%; /* Ajuste de largura mínima e crescimento */
     background: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 10px; /* Margem entre as caixas */
 }
 
 .box h3 {
@@ -53,7 +61,7 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
@@ -66,6 +74,7 @@ footer {
     }
 
     .box {
+        flex: 1 1 100%; /* Ajusta para 100% da largura em telas menores */
         padding: 15px;
     }
 }
