@@ -133,59 +133,67 @@ footer {
     }
 }
 
-/* Seção de Login */
+/* Login Section */
 .login-container {
-    max-width: 400px; /* Ajusta a largura conforme necessário */
-    position: fixed;
+    position: relative;
     top: 10px;
     right: 10px;
-    display: flex;
-    flex-direction: column; /* Altera o layout para coluna em telas menores */
-    gap: 10px; /* Adiciona espaçamento entre os elementos */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-#login-form {
-    width: 100%;
+.login-container form {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction:row;
 }
 
-#login-form label,
-#login-form input {
-    flex: 1; /* Faça ambos os elementos ocuparem o mesmo espaço */
-    padding: 5px;
+.login-container label {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    padding: 3px;
     margin-bottom: 10px;
-    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
-#login-form label {
-    margin-right: 10px; /* Adicione um espaço entre os elementos */
-}
-
-#login-form button {
-    width: calc(100% - 10px); /* Ajuste a largura para ocupar o espaço disponível menos o espaçamento */
-    padding: 5px;
-    background-color: #333;
-    color: #fff;
+.login-container button {
+    background-color: #4CAF50;
+    color: white;
     border: none;
     border-radius: 3px;
+    padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-#login-form button:hover {
-    background-color: #555;
+.login-container button:hover {
+    background-color: #45a049;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    #login-form label,
-    #login-form input,
-    #login-form button {
-        width: 100%; /* Para telas menores, definimos a largura como 100% para ocupar toda a largura */
-        margin-right: 0; /* Remova a margem para evitar quebras desnecessárias */
+@media (max-width: 600px) {
+    .login-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    .login-container form {
+        flex-direction: column;
+    }
+
+    .login-container label,
+    .login-container input,
+    .login-container button {
+        width: 100%;
+        margin: 5px 0;
     }
 }
-
-
