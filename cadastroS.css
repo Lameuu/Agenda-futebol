@@ -1,7 +1,7 @@
 form {
     max-width: 400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -30,6 +30,12 @@ form button:hover {
     background-color: #555;
 }
 
+#login-form{
+    margin-top: 10px;
+    padding: 1px;
+    
+}
+
 #btn-google-cadastro {
     margin-top: 10px;
     background-color: #dd4b39;
@@ -47,4 +53,74 @@ form button:hover {
 
 #ver-quadras-btn:hover {
     background-color: #555;
+}
+
+/* Login Section */
+.login-container3 {
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    padding: 1px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+}
+
+.login-container3 form {
+    display: flex;
+    flex-direction:row;
+}
+
+.login-container3 label {
+    
+    font-size: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.login-container3 input {
+    padding: 1px;
+    width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-container3 button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+
+.login-container3 button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    .login-container3 {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    .login-container3 form {
+        flex-direction: column;
+    }
+
+    .login-container3 label,
+    .login-container3 input,
+    .login-container3 button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+.botao{
+    font-size: 8px;
+    
 }

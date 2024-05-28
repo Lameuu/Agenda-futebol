@@ -15,18 +15,19 @@ body {
     background-attachment: fixed;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+
 
 /* Cabeçalho */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
+    z-index: 1000;
 }
 
 h1 {
@@ -65,45 +66,7 @@ main {
     padding: 40px 0;
 }
 
-/* Estilos das caixas principais */
-#boxes {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 40px;
-}
 
-.box,
-.box2 {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1;
-    margin: 10px;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #555;
-}
-
-/* Estilos da seção de imagens */
-#imagens {
-    text-align: center;
-}
-
-#imagens h2 {
-    margin-bottom: 20px;
-}
 
 /* Rodapé */
 footer {
@@ -116,84 +79,6 @@ footer {
     bottom: 0;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
 
-    #boxes {
-        flex-direction: column;
-    }
 
-    .box,
-    .box2 {
-        margin: 10px 0;
-    }
-}
 
-/* Login Section */
-.login-container {
-    position: relative;
-    top: 10px;
-    right: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.login-container form {
-    display: flex;
-    flex-direction:row;
-}
-
-.login-container label {
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.login-container input {
-    padding: 3px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.login-container button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.login-container button:hover {
-    background-color: #45a049;
-}
-
-@media (max-width: 600px) {
-    .login-container {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 10px auto;
-        width: 90%;
-    }
-
-    .login-container form {
-        flex-direction: column;
-    }
-
-    .login-container label,
-    .login-container input,
-    .login-container button {
-        width: 100%;
-        margin: 5px 0;
-    }
-}

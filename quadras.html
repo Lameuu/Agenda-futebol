@@ -9,27 +9,30 @@
 </head>
 <body>
     <!-- Login Section -->
-<div class="login-container">
+<div class="login-container2">
     <form id="login-form">
         <label for="username">Usuário:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Senha:</label>
         <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
+        <button class="botao" type="submit">Login</button>
     </form>
 </div>
 
     <header>
         <h1>Quadras de Futebol</h1>
+
+        <nav> 
+            <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="cadastro-empresa.html">Empresas</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+        </nav>
+
     </header>
-    <nav> 
-        <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
-        <li><a href="cadastro-empresa.html">Empresas</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-    </ul>
-    </nav>
+    
     <div class="quadra-container">
         <!-- Adicione mais quadras conforme necessário -->
 
@@ -134,6 +137,11 @@
             <button onclick="openReservaPopup('Quadra 2')">Reservar</button>
         </div>
 
+        <div class="quadra">
+            <img src="quadra2.jpg" alt="Quadra 2">
+            <h3>Quadra 20</h3>
+            <button onclick="openReservaPopup('Quadra 2')">Reservar</button>
+        </div>
         
     </div>
 

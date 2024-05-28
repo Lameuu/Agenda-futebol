@@ -5,52 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento de Quadra de Futebol</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
- <!-- Login Section -->
 <div class="login-container">
     <form id="login-form">
         <label for="username">Usuário:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Senha:</label>
         <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
+        <button class="botao" type="submit">Login</button>
     </form>
 </div>
 
+<header>
+    <h1>Agenda Fut</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="quadras.html">Quadras</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="cadastro-empresa.html">Empresa</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="boxes">
+        <div class="box">
+            <h2>Encontre as melhores quadras!</h2>
 
-    <header>
-        <h1>Agendamento de Quadra de Futebol</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="quadras.html">Quadras</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="cadastro-empresa.html">Empresa</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="boxes">
-            <div class="box">
-                <h2>Encontre as melhores quadras!</h2>
-                <a href="quadras.html" class="button">Ver Quadras</a>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="background-image: url('./Imagens/alec-moore-rbANExeyApc-unsplash.jpg');"></div>
+                    <div class="carousel-item" style="background-image: url('./Imagens/capa-guararema-960x675.jpg');"></div>
+                    <div class="carousel-item" style="background-image: url('./Imagens/11442806-estadio-de-futebol-3d-com-modelo-de-vista-frontal-de-gol-de-futebol-para-seu-projeto-vetor.jpg');"></div>
+                </div>
+            
+                <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+            
             </div>
-            <div class="box2">
-                <h2>Cadastre-se já e agende sua partida!</h2>
-                <a href="cadastro.html" class="button">Cadastre-se</a>
-            </div>
-        </section>
-        <section id="imagens">
-            <h2>Conheça nossas quadras</h2>
-            <!-- Aqui serão colocadas as imagens das quadras -->
-        </section>
-    </main>
-    <footer>
-        <!-- Informações de contato e rodapé -->
-    </footer>
-    <script src="script.js"></script>
+            <a href="quadras.html" class="button">Ver Quadras</a>
+        </div>
+        <div class="box2">
+            <h2>Cadastre-se já e agende sua partida!</h2>
+            <a href="cadastro.html" class="button">Cadastre-se</a>
+        </div>
+    </section>
+    <section id="imagens">
+        <h2>Conheça nossas quadras</h2>
+        <!-- Aqui serão colocadas as imagens das quadras -->
+    </section>
+</main>
+<footer>
+    <!-- Informações de contato e rodapé -->
+</footer>
+<script src="script.js"></script>
+<script src="index.js"></script>
 </body>
 </html>

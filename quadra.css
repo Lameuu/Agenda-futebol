@@ -1,87 +1,4 @@
-/* CSS global */
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-/* Header */
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Navegação */
-
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #444;
-    overflow: hidden;
-}
-
-nav a {
-    display: flex;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    float: left;
-}
-
-nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-nav {
-    background-color: #444;
-    overflow: hidden;
-}
-
-nav a {
-    display: flex;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    float: left;
-}
-
-nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-}
 
 
 
@@ -91,7 +8,9 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 20px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 100px;
 }
 
 .quadra {
@@ -99,10 +18,11 @@ nav ul li a:hover {
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin: 10px;
-    padding: 20px;
+    margin: 50px;
+    padding: 115px;
     text-align: center;
-    width: 300px;
+    width: 350px;
+    
 }
 
 .quadra img {
@@ -236,4 +156,72 @@ nav ul li a:hover {
 
 #reserva-popup .popup-content .close-btn:hover {
     color: #dc3545;
+}
+
+/* Login Section */
+.login-container2 {
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+}
+
+.login-container2 form {
+    display: flex;
+    flex-direction:row;
+}
+
+.login-container2 label {
+    font-size: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.login-container2 input {
+    padding: 1px;
+    width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-container2 button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+
+.login-container2 button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    .login-container2 {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    .login-container2 form {
+        flex-direction: column;
+    }
+
+    .login-container2 label,
+    .login-container2 input,
+    .login-container2 button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+.botao{
+    font-size: 8px;
 }
