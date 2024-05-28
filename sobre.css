@@ -31,7 +31,14 @@ main {
     padding: 20px;
 }
 
+#sobre{
+
+    padding: 115px;
+    
+}
+
 #sobre h2 {
+    color: #fff;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -44,6 +51,7 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    gap: 100px;
 }
 
 
@@ -61,11 +69,13 @@ main {
 }
 
 footer {
+    position: fixed;
     background: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     position: relative;
+    top: 100px;
     bottom: 0;
     width: 100%;
 }
