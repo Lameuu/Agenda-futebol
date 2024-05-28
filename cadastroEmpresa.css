@@ -1,5 +1,6 @@
 /* Registration Form */
 .registration-container {
+    
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
@@ -40,6 +41,19 @@
 
 .registration-container button:hover {
     background-color: #45a049;
+}
+
+.principal{
+
+    margin-top: 100px;
+    
+}
+
+/* ID's*/
+
+#empresa-form{
+
+    height: 500px;
 }
 
 /* Login Section */
